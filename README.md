@@ -25,3 +25,4 @@ completed list:
 - Set server.js up. 
 - dateformat
 - User api ( return for friend create/delete functionality)
+- user-controller ( return for friend stuff )

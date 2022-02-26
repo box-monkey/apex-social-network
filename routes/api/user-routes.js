@@ -5,6 +5,8 @@ getUserById,
 newUser,
 deleteUser,
 updateUser,
+// create friend
+// delete said friend
 } = require('../../controllers/user-controller');
 
 // /api/users
