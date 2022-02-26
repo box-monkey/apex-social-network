@@ -23,3 +23,5 @@ completed list:
 - Thought Model.
 - Reaction Model. 
 - Set server.js up. 
+- dateformat
+
