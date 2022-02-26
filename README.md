@@ -21,3 +21,5 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 completed list: 
 - User Model. 
 - Thought Model.
+- Reaction Model. 
+- Set server.js up. 
