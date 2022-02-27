@@ -4,56 +4,64 @@ const { User } = require("../models");
 
 const userController = {
   // gets all users
-  getAllUsers(req, res) {
-    User.find({})
+  getUsers(req, res) {
+    User.find()
       .populate({
-        path: "placeholder",
-        select: "-__v",
+        path: "thoughts",
+        select: "__v",
       })
       .select("-__v")
       .sort({ _id: -1 })
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => {
         console.log(err);
-        res.status(400).json(err);
+        res.sendStatus(400);
       });
   },
-  // get single user by id
+  // gets a single user by id
   getUserById(req, res) {
-    User.findOne({ _id: params.id })
-      .then((dbUserData) => res.json(dbUserData))
-      .catch((err) => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  },
-  // create a new user
-  newUser(req, res) {
-    User.create(body)
-      .then((dbUserData) => res.json(dbUserData))
-      .catch((err) => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  },
-  // update user
-  updateUser(req, res) {
-    User.findByIdAndUpdate({ _id: params.id }, body, { new: true })
+    User.findById({ _id: params.userId })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id!" });
+          res.status(404).json({ message: "No user found with this id" });
           return;
         }
         res.json(dbUserData);
       })
       .catch((err) => res.status(400).json(err));
   },
-  // delete user
-  deleteUser(res, res) {
-    User.findByIdAndDelete({ _id: params.id })
+  // creates a new user
+  newUser({ body }, res) {
+    User.create(body)
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id!" });
+          res.status(404).json({ message: "No user found with this id" });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch((err) => res.status(400).json(err));
+  },
+  // deletes a user
+  deleteUser({ params }, res) {
+    User.findByIdAndDelete({ _id: params.userId })
+      .then((dbUserData) => {
+        if (!dbUserData) {
+          res.status(404).json({ message: "No user found with this id" });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch((err) => res.status(400).json(err));
+  },
+  // updates a user
+  updateUser({ params, body }, res) {
+    User.findByIdAndUpdate({ _id: params.userId }, body, {
+      new: true,
+    })
+      .then((dbUserData) => {
+        if (!dbUserData) {
+          res.status(404).json({ message: "No thought found with this id" });
           return;
         }
         res.json(dbUserData);
@@ -62,7 +70,9 @@ const userController = {
   },
 };
 
-// friend stuff goes here? 
+module.exports = userController;
+
+// friend stuff goes here?
 
 // getAllUsers,
 // getUserById,
