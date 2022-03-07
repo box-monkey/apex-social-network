@@ -32,7 +32,7 @@ programs.
 
 # Video
 
-https://apex-blogtech.herokuapp.com/
+chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/0128b746-a82f-47cb-y27e-69219a26d520
 
 
 # Questions
@@ -51,8 +51,8 @@ https://apex-blogtech.herokuapp.com/
 
 #
 
-![](./.png)
-![](./.png)
+![social](./social.png)
+![social](./social2.png)
 ![](./.png)
 
 
