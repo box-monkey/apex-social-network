@@ -32,7 +32,7 @@ programs.
 
 # Video
 
-chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/0128b746-a82f-47cb-y27e-69219a26d520
+https://youtu.be/S4mph4Jga1A 
 
 
 # Questions
@@ -53,7 +53,7 @@ chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/0128b746-a82
 
 ![social](./social.png)
 ![social](./social2.png)
-![](./.png)
+
 
 
 
